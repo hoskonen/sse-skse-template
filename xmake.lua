@@ -2,7 +2,7 @@
 includes("lib/commonlibsse-ng")
 
 -- set project constants
-set_project("skse-plugin-template")
+set_project("__PROJECT_NAME__")
 set_version("0.0.0")
 set_license("GPL-3.0")
 set_languages("c++23")
@@ -13,11 +13,13 @@ add_rules("mode.debug", "mode.releasedbg")
 add_rules("plugin.vsxmake.autoupdate")
 
 -- define targets
-target("skse-plugin-template")
+target("__PROJECT_NAME__")
+    set_kind("shared")
+
     add_rules("commonlibsse-ng.plugin", {
-        name = "skse-plugin-template",
-        author = "libxse",
-        description = "SKSE64 plugin template using CommonLibSSE-NG"
+        name = "__PROJECT_NAME__",
+        author = "hoskonen",
+        description = "__PROJECT_DESCRIPTION__"
     })
 
     -- add src files
