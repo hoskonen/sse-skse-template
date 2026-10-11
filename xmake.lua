@@ -15,6 +15,8 @@ add_rules("plugin.vsxmake.autoupdate")
 -- define targets
 target("__PROJECT_NAME__")
     set_kind("shared")
+    -- setup writes UTF-8; decode generated Windows resource strings the same way.
+    add_mrcflags("/c65001", { force = true })
 
     add_rules("commonlibsse-ng.plugin", {
         name = "__PROJECT_NAME__",
